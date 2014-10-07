@@ -1,0 +1,287 @@
+/*
+ * Reset CSS
+ *
+ * Removes browser inconsistencies and defines a base set of
+ * rules to work with.
+ */
+
+/* Eric Meyer reset v1.0 | 20080212
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent; }
+
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none; }
+:focus { 
+	outline: 0;
+	-moz-outline-style: none; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table {
+	border-collapse: collapse;
+	border-spacing: 0; }
+
+
+/* HTML5 elements
+ */
+article, aside, figure, footer, header, hgroup, nav, section { display: block; }
+
+
+/* VectorStock: Defaults
+ */
+body {
+	color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	background-color: #fff;
+	min-width: 1028px; 
+	}
+img { display: block; }
+a { text-decoration: none; color: #888891;}
+h1, h2, h3, h4, h5, h6 { font-weight: normal;}
+var { font-style: normal; }
+
+
+/* VectorStock: Forms
+ */
+input, textarea {
+	margin: 0; padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	border: none; }
+/*
+ * File: 			Common CSS
+ * Description:		Common rules to govern the VectorStock website
+ * Author:			Jason Maas (Seven)
+ *
+ *
+ * Table of Contents
+ * ``````````````````````````````````````
+ * 1.  Tabbed Panels
+ * 2.  VectorStock Custom Messages
+ * 3.  Common buttons
+ * 4.  Pagination
+ * 5.  Common Form classes
+ * 6.  Note styles
+ * 7.  Table Formatting
+ * 8.  Open/Close Topics
+ * 9.  Generic
+ *
+ */
+body{ width: 100%; height:600px; }
+
+/* 0. Container ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+.container {
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+	height:100% }
+
+/* 1. Header ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+ 
+header.main {
+	position: relative;
+	height: 58px;
+	background: url(../img/repeat.png) repeat-x;
+	 }
+header.focus { 
+	z-index: 12; }
+header .logo {
+	float: left;
+	margin: 10px; }
+header .logo a {
+	display: block;
+	width: 230px; 
+	height: 38px;
+	text-indent: -7777px;
+	background: url(../img/elements-v2.png) -350px -112px; }
+
+/* Nav */
+header.main nav li {
+	float: left;
+	margin-top: 14px; 
+	margin-right: 40px;
+	display: inline;
+	}
+header.main nav li a {
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	line-height: 18px; }
+header.main nav li a.purchase{
+	color: #4AAD53;
+	/*green*/
+}	
+
+header.main nav li a span {
+	display: block;
+	padding: 8px 10px 8px 10px; 
+	}
+header.main nav li a.press, 
+	header.main nav li a.press span, 
+	header.main nav li.selected a, 
+	header.main nav li.selected a span { 
+		/*background: url(../img/elements-v2.png) no-repeat; */}
+header.main nav li a:hover {
+	color: #00b5f0;
+	text-shadow: #000 0 1px 0; }
+header.main nav li a.press {
+	color: #4498b4;
+	text-shadow: none;
+	background-position: -1620px -40px; }
+header.main nav li a.press span {
+	 background-position: right -40px; }
+header.main nav li.selected a {
+	/*color: #111224;*/
+	color: #00b5f0;
+	text-shadow: none;
+	/*background-position: -1620px -90px; */}
+header.main nav li.selected a span { 
+	background-position: right -90px; }
+header.main ul.secondary {
+	position: absolute;
+	top: 24px; right: 0px;
+ 
+	 }
+header.main ul.secondary li { 
+	float: left;
+	margin-right: 10px; }
+header.main ul.secondary li a {
+	color: #b8b8bd;
+	font-size: 11px; }
+header.main ul.secondary li a:hover { 
+	color: #fff;
+	text-decoration: underline; }
+header div.title{
+	padding-bottom: 5px;
+	height:45px;
+}
+/* 2. Category List ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+#categoryMenu {
+	position: absolute;
+	top: 0px; right: 0;
+	width: 850px;
+	z-index: 11; }
+#categoryMenu h2 {
+	position: absolute;
+	right: 0; bottom: -34px;
+	width: 146px; height: 34px;
+	background: url(../img/elements-v2.png) no-repeat -10px -20px; }
+#categoryMenu h2 a {
+	display: block;
+	padding: 4px 0 7px 24px;
+	color: #eee;
+	font-size: 11px; }
+#categoryMenu .open h2 { 
+	background-position: -190px -20px; }
+#categoryMenu section {
+	display: none;
+	padding: 6px 0 10px 0;
+	background-color: #585966;
+	border-radius: 0 0 0 5px;
+	overflow: auto; }
+#categoryMenu section.navi {
+	display: none;
+	padding: 6px 0 10px 0;
+	background-color: #585966;
+	border-radius: 0 0 0 5px;
+	overflow: auto; 
+	}
+#categoryMenu section ul {
+	float: left;
+	width: 157px;
+	margin-left: 11px; }
+#categoryMenu ul li.extra { 
+	padding-bottom: 6px; }
+#categoryMenu ul li a {
+	display: block;
+	padding: 2px 8px 2px 8px;
+	color: #d1d3d4;
+	font-size: 11px;
+	line-height: 14px;
+	border: 1px solid #585966;
+	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+#categoryMenu ul li a:hover {
+	color: #fff;
+	text-shadow: #36363e 0 1px 1px;
+	background-color: #4d4d59;
+	border-color: #00b5f0; }
+
+/* 4. Main Content ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+article.main {
+	width: 100%;
+	position: relative;
+	margin: 0px auto 0 auto;
+	padding-bottom: 20px; 
+	line-height: 1.8em;
+	height: 100%
+	}
+article.main header { 
+	position: relative; 
+	}
+article.main h3 { font-size: 40px; margin: 10px 0;}
+
+h3.title_name {
+	font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
+	font-weight: normal;
+	font-size: 4em;
+	color: #333;
+	margin: 0;
+	text-align: center;
+	line-height: 1em;
+}
+h3.title_name span {
+	font-family: normal Georgia,'Times New Roman',Times,serif;
+	color: #00b5f0;
+	font-size: 0.9em;
+}
+h3.title_name small {
+	display: block;
+	font-family: normal Verdana,Arial,Helvetica,sans-serif;
+	font-size: 0.3em;
+	font-weight: bold;
+	letter-spacing: 0.5em;
+	text-transform: uppercase;
+	color: #AAA;
+	text-shadow: none;
+}
+article.main .overlay {
+    background: url("../img/overlay.png") repeat;
+    left: -10px;
+    position: absolute;
+    z-index: 10;
+}
+/* 5. Footers ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
+ 	
+/* Page content */
+article.main footer {
+    border-top: 4px solid #1A1B29;
+    height: 18px;
+	margin-top: 20px;
+    padding: 10px 0 9px;
+    position: relative;
+}
+article.main footer a:hover { color: #00b5f0;}
+

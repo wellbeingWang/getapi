@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<securityResource>
+<Menus>
+	<!-- 模块名称 -->
+	<Item  id="SystemSetting" text="系统设置" iconCls="menu-system">
+		<!-- 下级模块名称 -->
+		<Item id="AppRoleView" iconCls="menu-role" text="角色设置">
+			<function id="_AppRoleList" text="查看角色" iconCls="menu-list">
+				<url>/system/listAppRole.do</url>
+			</function>
+			<function id="_AppRoleAdd" text="添加角色" iconCls="menu-add">
+				<url>/system/listAppRole.do</url>
+				<url>/system/saveAppRole.do</url>
+			</function>
+			<function id="_AppRoleEdit" text="编辑角色" iconCls="menu-add">
+				<url>/system/listAppRole.do</url>
+				<url>/system/saveAppRole.do</url>
+			</function>
+			<function id="_AppRoleDel" text="删除角色" iconCls="menu-del">
+				<url>/system/listAppRole.do</url>
+				<url>/system/mulDelAppRole.do</url>
+			</function>
+			<function id="_AppRoleGrant" text="授权角色">
+				<url>/system/listAppRole.do</url>
+				<url>/system/grantAppRole.do</url>
+			</function>
+		</Item>
+		<Item id="ReportTemplateView" iconCls="menu-report" text="报表管理">
+		</Item>
+	</Item>
+	<!--其他模块 -->
+	<Item>
+	</Item>
+</Menus>
+
+<roles>
+	<role id="ROLE_ADNIM_SUPER" name="ROLE_ADNIM_SUPER" >
+	
+	</role>
+	
+	<role id="ROLE_ADMIN_ADMIN" name="ROLE_ADMIN_ADMIN" >
+		<items>
+			<value>SystemSetting,AppRoleView,ReportTemplateView</value>
+			<function>
+				<value>_AppRoleList,_AppRoleAdd</value>
+			</function>
+		</items>
+	</role>
+
+
+</roles>
+
+
+</securityResource>

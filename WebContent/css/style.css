@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, ul, li, h1, h2, h3, h4, h5, h6, fieldset, legend {padding:0; margin:0;}
+body {font:12px/normal Verdana, Arial, Helvetica, sans-serif;}
+ul,li {list-style-type:none; text-transform:capitalize;}
+.clear {clear:both; *display:inline;/*IE only*/}
+
+/*menu*/
+/* /.sub {margin:0 auto 60px; width:1080px; display:block;} */
+/* .sub .jquery_out {float:left;line-height:32px;display:block; border-right:1px solid #fff; text-align:center; color:#fff;font:18px/32px "微软雅黑"; background:#062723 url(../images/slide-panel_03.png) 0 0 repeat-x;}
+.sub .jquery_out .smile {padding-left:1em;}
+.sub .jquery_inner {margin-left:16px;}
+.sub .jquery {margin-right:1px;padding:0 2em;} */
+.sub .mainlevel {float:left; border-right:0px solid #fff; width:55%; padding:5px 10px/*IE6 only*/}
+.sub .mainlevel a { text-decoration:none; line-height:20px; padding:10px 30px; width:50%;}
+/* .sub .mainlevel a:hover {color:; text-decoration:none;} */
+.sub .mainlevel ul {display:none; position:relative; left:100px; top:300px;bottom:100px}
+.sub .mainlevel li {border-top:0px solid #fff; width:120px;padding:1px 20px/* IE6 only */} 

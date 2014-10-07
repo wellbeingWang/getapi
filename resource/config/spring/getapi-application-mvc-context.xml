@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"	
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+		
+	<!-- enable autowire -->
+    <context:annotation-config />
+    <context:component-scan  base-package="cn.getapi.web.controller"/>
+    
+	
+	<mvc:resources location="/css/" mapping="/css/**"/>
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/img/" mapping="/images/**"/>
+	<mvc:resources location="/temppage/" mapping="/temppage/**"/>
+	<mvc:resources location="/pages/" mapping="/pages/**"/>
+	<mvc:resources location="/" mapping="/*.jsp"/>
+	<mvc:resources location="/" mapping="/*.html"/>
+	<mvc:resources location="/" mapping="/*.ico"/>
+      
+	
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jsonConverter"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		 <property name="supportedMediaTypes" value="application/json" />
+	</bean>
+	
+	<bean id="multipartResolver"  
+	    class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >  
+	    <property name="defaultEncoding" value="gbk"/> <!-- 默认编码 (ISO-8859-1) -->  
+	    <property name="maxInMemorySize" value="10240"/> <!-- 最大内存大小 (10240)-->  
+	   <!--  <property name="uploadTempDir" value="/upload/"/>  --><!-- 上传后的目录名 (WebUtils#TEMP_DIR_CONTEXT_ATTRIBUTE) -->  
+	    <property name="maxUploadSize" value="-1"/> <!-- 最大文件大小，-1为无限止(-1) -->  
+	</bean>
+	
+	<bean id="baseInterceptor" class="cn.getapi.mvc.interceptor.BaseInterceptorAdapter" />
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="baseInterceptor" />
+			</list>
+		</property>
+	</bean>
+</beans>

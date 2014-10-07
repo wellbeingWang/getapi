@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-config.dtd">   <!-- dtd约束，一定要拷过去啊。下面的根据具体应用，改改就可以了 -->
+<configuration>  
+        <!-- 全局别名设置，在映射文件中只需写别名，而不必写出整个类路径  -->  
+<!--     <typeAliases>  
+         <typeAlias alias="Menu"   type="com.b5m.dash.security.domain.Menu" />  
+    </typeAliases>  
+    
+    <plugins>  
+	    <plugin interceptor="com.b5m.dash.commons.mybatis.dialect.PagePlugin">  
+	        <property name="dialect" value="Postgre"/>  
+	        只要是sql的id（即mapper里的方法的命名）是以 ListPage结尾的都要通过该拦截器插件处理
+			pageSqlId在新加的拦截器里有获取到后加以判断
+	        <property name="pageSqlId" value=".*ListPage"/>  
+	    </plugin>  
+	</plugins> 
+	 -->
+
+    <!-- 非注解的sql映射文件配置，如果使用mybatis注解，该mapper无需配置，但是如果mybatis注解中包含@resultMap注解，则mapper必须配置，给resultMap注解使用 --> 
+    <mappers>  
+        <mapper resource="config/mybatis/ApiDocMapper.xml" />
+        
+    </mappers> 
+     
+</configuration> 
